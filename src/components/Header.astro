@@ -1,0 +1,172 @@
+---
+const menuItems = [
+  { name: "Proyectos", href: "#proyectos" },
+  { name: "Sobre Nosotros", href: "#nosotros" },
+  { name: "Contacto", href: "#contacto" },
+];
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  id="header"
+>
+  <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 sm:h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center space-x-2 group">
+        <div
+          class="w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-600 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300"
+        >
+          <span class="text-white font-bold text-xl">IT</span>
+        </div>
+        <span
+          class="text-xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent hidden sm:block"
+        >
+        </span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex items-center space-x-8">
+        {
+          menuItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="text-slate-300 hover:text-primary-400 transition-colors duration-300 font-medium relative group"
+              >
+                {item.name}
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-400 transition-all duration-300 group-hover:w-full" />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- CTA Button -->
+      <a
+        href="#contacto"
+        class="hidden md:block px-6 py-2.5 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary-500/50"
+      >
+        Contactar
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-button"
+        class="md:hidden w-10 h-10 flex flex-col items-center justify-center space-y-1.5 group"
+        aria-label="Toggle menu"
+      >
+        <span
+          class="w-6 h-0.5 bg-white transition-all duration-300 group-hover:bg-primary-400"
+        ></span>
+        <span
+          class="w-6 h-0.5 bg-white transition-all duration-300 group-hover:bg-primary-400"
+        ></span>
+        <span
+          class="w-6 h-0.5 bg-white transition-all duration-300 group-hover:bg-primary-400"
+        ></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="md:hidden absolute top-full left-0 right-0 bg-slate-900/95 backdrop-blur-lg border-t border-slate-800 transform translate-y-[-100%] opacity-0 transition-all duration-300 pointer-events-none"
+  >
+    <ul class="container mx-auto px-4 py-6 space-y-4">
+      {
+        menuItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="block py-3 px-4 text-slate-300 hover:text-primary-400 hover:bg-slate-800/50 rounded-lg transition-all duration-300"
+            >
+              {item.name}
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <a
+          href="#contacto"
+          class="block py-3 px-4 text-center bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg font-medium hover:from-primary-600 hover:to-primary-700 transition-all duration-300"
+        >
+          Contactar
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  // Header scroll effect
+  const header = document.getElementById("header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header?.classList.add(
+        "bg-slate-900/80",
+        "backdrop-blur-lg",
+        "shadow-lg",
+        "shadow-slate-900/50",
+      );
+    } else {
+      header?.classList.remove(
+        "bg-slate-900/80",
+        "backdrop-blur-lg",
+        "shadow-lg",
+        "shadow-slate-900/50",
+      );
+    }
+  });
+
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  mobileMenuButton?.addEventListener("click", () => {
+    const isOpen = mobileMenu?.classList.contains("translate-y-0");
+
+    if (isOpen) {
+      mobileMenu?.classList.remove(
+        "translate-y-0",
+        "opacity-100",
+        "pointer-events-auto",
+      );
+      mobileMenu?.classList.add(
+        "translate-y-[-100%]",
+        "opacity-0",
+        "pointer-events-none",
+      );
+    } else {
+      mobileMenu?.classList.add(
+        "translate-y-0",
+        "opacity-100",
+        "pointer-events-auto",
+      );
+      mobileMenu?.classList.remove(
+        "translate-y-[-100%]",
+        "opacity-0",
+        "pointer-events-none",
+      );
+    }
+  });
+
+  // Close mobile menu on link click
+  const mobileLinks = document.querySelectorAll("#mobile-menu a");
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.remove(
+        "translate-y-0",
+        "opacity-100",
+        "pointer-events-auto",
+      );
+      mobileMenu?.classList.add(
+        "translate-y-[-100%]",
+        "opacity-0",
+        "pointer-events-none",
+      );
+    });
+  });
+</script>
