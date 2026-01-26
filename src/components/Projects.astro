@@ -6,7 +6,8 @@ const projects = [
     description: 'Web para el juego de cartas One Piece Card Game que permite crear y compartir mazos personalizados.',
     image: 'https://cdn.jsdelivr.net/gh/itsnotjs-creator/portafolio-images/op-portal.jpg',
     tags: ['React', 'NestJS','Mongo', 'Railways' ],
-    color: 'from-green-500/20 to-emerald-500/20'
+    color: 'from-green-500/20 to-emerald-500/20',
+    link: 'https://www.opdeckgenerator.online/'
   },
   {
     id: 2,
@@ -98,12 +99,21 @@ const projects = [
                   </div>
 
                   <!-- CTA -->
-                  <button class="mt-4 flex items-center space-x-2 text-primary-400 font-medium group-hover:text-primary-300 transition-colors duration-300">
-                    <span>Ver detalles</span>
-                    <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                  </button>
+                  {project.link ? (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" class="mt-4 flex items-center space-x-2 text-primary-400 font-medium group-hover:text-primary-300 transition-colors duration-300">
+                      <span>Ir a la web</span>
+                      <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                      </svg>
+                    </a>
+                  ) : (
+                    <button class="mt-4 flex items-center space-x-2 text-primary-400 font-medium group-hover:text-primary-300 transition-colors duration-300">
+                      <span>Ir a la web</span>
+                      <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                      </svg>
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
