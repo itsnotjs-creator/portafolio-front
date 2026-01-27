@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lading-page-ruddy.vercel.app/sitemap.xml

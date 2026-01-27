@@ -2,12 +2,20 @@
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  url?: string;
 }
 
 const {
   title = "Desarrollo de Software a Medida | Soluciones Digitales Escalables",
   description = "Transformamos tus ideas en realidades digitales con tecnologías de vanguardia. Especialistas en Vue, React, NestJS y Cloud Computing.",
+  image = "/images/og-image.jpg",
+  url = "https://lading-page-ruddy.vercel.app",
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || url);
+const keywords =
+  "desarrollo software, programación web, Vue.js, React, NestJS, desarrollo aplicaciones, transformación digital, servicios IT, desarrollo a medida";
 ---
 
 <!doctype html>
@@ -15,10 +23,57 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, canonicalURL)} />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="IT Service" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, canonicalURL)} />
+
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="IT Service" />
+    <meta name="theme-color" content="#0ea5e9" />
+
     <title>{title}</title>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "IT Service",
+        url: url,
+        logo: new URL("/favicon.svg", url),
+        description: description,
+        sameAs: [],
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "Customer Service",
+          availableLanguage: ["Spanish"],
+        },
+        offers: {
+          "@type": "Offer",
+          category: "Software Development Services",
+        },
+      })}
+    />
   </head>
   <body class="bg-slate-950 text-white antialiased">
     <slot />
