@@ -2,21 +2,61 @@
 const technologies = [
   {
     name: 'Vue.js',
-    icon: '🎨',
+    icon: `
+      <path fill="currentColor" d="M12 19.6 3.8 5h3.8L12 12.9 16.4 5h3.8L12 19.6Z" />
+      <path fill="currentColor" opacity="0.7" d="M12 15.4 6.9 5h3L12 8.7 14.1 5h3L12 15.4Z" />
+    `,
     description: 'Framework progresivo para interfaces reactivas y modernas',
     color: 'from-green-500 to-emerald-600'
   },
   {
     name: 'React',
-    icon: '⚛️',
+    icon: `
+      <circle cx="12" cy="12" r="1.8" fill="currentColor" />
+      <ellipse cx="12" cy="12" rx="8.5" ry="3.5" stroke="currentColor" stroke-width="1.6" fill="none" />
+      <ellipse cx="12" cy="12" rx="8.5" ry="3.5" stroke="currentColor" stroke-width="1.6" fill="none" transform="rotate(60 12 12)" />
+      <ellipse cx="12" cy="12" rx="8.5" ry="3.5" stroke="currentColor" stroke-width="1.6" fill="none" transform="rotate(120 12 12)" />
+    `,
     description: 'Biblioteca líder para construir interfaces de usuario dinámicas',
     color: 'from-blue-500 to-cyan-600'
   },
   {
     name: 'NestJS',
-    icon: '🚀',
+    icon: `
+      <path d="M12 3.5 18.5 7.3v9.4L12 20.5 5.5 16.7V7.3L12 3.5Z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linejoin="round" />
+      <path d="M8.5 15.6V8.4l7 7.2V8.4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    `,
     description: 'Framework escalable para aplicaciones backend enterprise',
     color: 'from-red-500 to-pink-600'
+  },
+  {
+    name: 'IA',
+    icon: `
+      <rect x="6.5" y="6.5" width="11" height="11" rx="2.2" stroke="currentColor" stroke-width="1.8" fill="none" />
+      <path d="M9.2 2.8v2.4M14.8 2.8v2.4M9.2 18.8v2.4M14.8 18.8v2.4M2.8 9.2h2.4M2.8 14.8h2.4M18.8 9.2h2.4M18.8 14.8h2.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+      <path d="M10 14.8v-5.6h1.1l.9 2.2.9-2.2H14v5.6M10 12.2h3.8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    `,
+    description: 'Implementamos automatización, asistentes y flujos inteligentes potenciados por IA aplicada al negocio.',
+    color: 'from-fuchsia-500 to-violet-600'
+  },
+  {
+    name: 'Laravel',
+    icon: `
+      <path d="M7 7.2 12 4.4l5 2.8v5.6l-5 2.8-5-2.8V7.2Z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linejoin="round" />
+      <path d="M12 4.4v5.4m5-2.6-5 2.6-5-2.6m5 8.2v-5.6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M7 16.8 4.5 15.3V8.7L7 7.2m10 9.6 2.5-1.5V8.7L17 7.2" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    `,
+    description: 'Construimos productos robustos con Laravel para backends, paneles administrativos y APIs mantenibles.',
+    color: 'from-orange-500 to-red-600'
+  },
+  {
+    name: 'Cloud',
+    icon: `
+      <path d="M8.2 18h8.9a3.4 3.4 0 0 0 .5-6.8 5.7 5.7 0 0 0-10.9-1.6A4.1 4.1 0 0 0 8.2 18Z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M9.5 14.6 12 12l2.5 2.6M12 12v6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    `,
+    description: 'Diseñamos infraestructura cloud con despliegues continuos, observabilidad y escalado confiable.',
+    color: 'from-sky-500 to-indigo-600'
   }
 ];
 
@@ -69,7 +109,7 @@ const capabilities = [
     </div>
 
     <!-- Technologies Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-20 max-w-6xl mx-auto">
       {technologies.map((tech, index) => (
         <div 
           class="group relative bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-8 hover:border-slate-700 transition-all duration-500 hover:shadow-2xl hover:shadow-primary-500/10 hover:-translate-y-2"
@@ -80,8 +120,15 @@ const capabilities = [
           
           <!-- Icon -->
           <div class="relative mb-6">
-            <div class={`w-20 h-20 bg-gradient-to-br ${tech.color} rounded-2xl flex items-center justify-center text-4xl shadow-lg shadow-primary-500/20 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
-              {tech.icon}
+            <div class={`w-20 h-20 bg-gradient-to-br ${tech.color} rounded-2xl flex items-center justify-center shadow-lg shadow-primary-500/20 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+              <svg
+                class="w-10 h-10 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                set:html={tech.icon}
+              />
             </div>
           </div>
 

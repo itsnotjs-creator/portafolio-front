@@ -7,15 +7,15 @@ interface Props {
 }
 
 const {
-  title = "Desarrollo de Software a Medida | Soluciones Digitales Escalables",
-  description = "Transformamos tus ideas en realidades digitales con tecnologías de vanguardia. Especialistas en Vue, React, NestJS y Cloud Computing.",
+  title = "Apirexlab | Desarrollo de Software a Medida y Soluciones Cloud",
+  description = "En Apirexlab transformamos ideas en productos digitales escalables. Especialistas en Vue, React, NestJS, Laravel, IA aplicada y arquitectura cloud.",
   image = "/images/og-image.jpg",
-  url = "https://lading-page-ruddy.vercel.app",
+  url = "https://www.apirex.cl",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || url);
 const keywords =
-  "desarrollo software, programación web, Vue.js, React, NestJS, desarrollo aplicaciones, transformación digital, servicios IT, desarrollo a medida";
+  "apirexlab, desarrollo software, programación web, Vue.js, React, NestJS, Laravel, inteligencia artificial, cloud computing, desarrollo aplicaciones, transformación digital, desarrollo a medida";
 ---
 
 <!doctype html>
@@ -36,7 +36,7 @@ const keywords =
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, canonicalURL)} />
     <meta property="og:locale" content="es_ES" />
-    <meta property="og:site_name" content="IT Service" />
+    <meta property="og:site_name" content="Apirexlab" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -47,7 +47,7 @@ const keywords =
 
     <!-- Additional SEO -->
     <meta name="robots" content="index, follow" />
-    <meta name="author" content="IT Service" />
+    <meta name="author" content="Apirexlab" />
     <meta name="theme-color" content="#0ea5e9" />
 
     <title>{title}</title>
@@ -58,7 +58,7 @@ const keywords =
       set:html={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Organization",
-        name: "IT Service",
+        name: "Apirexlab",
         url: url,
         logo: new URL("/favicon.svg", url),
         description: description,
