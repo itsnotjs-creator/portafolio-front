@@ -1,0 +1,229 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "Eliminación de datos | Apirexlab";
+const description =
+  "Solicita la eliminación de tu cuenta y de los datos asociados a una aplicación o servicio de Apirex (Pull-Up).";
+---
+
+<Layout title={title} description={description}>
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur-lg">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <a
+          href="/"
+          class="flex items-center space-x-2 group"
+          aria-label="Volver al inicio de Apirexlab"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/itsnotjs-creator/portafolio-images/apirexlab-logo.png"
+            alt="Logo de Apirexlab"
+            width="120"
+            height="80"
+            style="border-radius: 50%;"
+          />
+        </a>
+        <a
+          href="/"
+          class="text-slate-300 hover:text-primary-400 transition-colors duration-300 font-medium"
+        >
+          ← Volver al sitio
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-2xl sm:text-3xl font-bold text-white mb-2">
+        Solicitud de eliminación de datos
+      </h1>
+      <p class="text-slate-400 mb-8">
+        Completá el formulario para solicitar la eliminación de tu cuenta y de
+        los datos asociados a una aplicación o servicio de Apirex.
+      </p>
+
+      <!-- Solicitud -->
+      <form
+        id="deletion-form"
+        class="space-y-5 bg-slate-900/60 border border-slate-800 rounded-xl p-6 sm:p-8"
+      >
+        <div>
+          <label for="name" class="block text-sm font-medium text-slate-300 mb-1.5">
+            Nombre
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            autocomplete="name"
+            placeholder="Tu nombre completo"
+            class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-primary-500 transition-colors"
+          />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-slate-300 mb-1.5">
+            Correo de la cuenta
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="correo@ejemplo.cl"
+            class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-primary-500 transition-colors"
+          />
+        </div>
+
+        <div>
+          <label for="rut" class="block text-sm font-medium text-slate-300 mb-1.5">
+            RUT
+          </label>
+          <input
+            type="text"
+            id="rut"
+            name="rut"
+            required
+            placeholder="12.345.678-9"
+            class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-primary-500 transition-colors"
+          />
+        </div>
+
+        <div>
+          <label for="app" class="block text-sm font-medium text-slate-300 mb-1.5">
+            Aplicación o servicio a remover
+          </label>
+          <input
+            type="text"
+            id="app"
+            name="app"
+            required
+            placeholder="Pull-Up"
+            class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-primary-500 transition-colors"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="w-full py-3 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 rounded-lg font-medium transition-all duration-300 transform hover:scale-[1.01] shadow-lg shadow-primary-500/30"
+        >
+          Enviar solicitud de eliminación
+        </button>
+        <p class="text-xs text-slate-500 text-center">
+          Al enviar se abrirá tu cliente de correo con la solicitud lista para
+          enviar a contact@apirex.cl.
+        </p>
+      </form>
+
+      <!-- Mensaje de confirmación -->
+      <div
+        id="deletion-success"
+        class="hidden mt-6 bg-emerald-500/10 border border-emerald-500/40 rounded-xl p-6"
+        role="status"
+      >
+        <h2 class="text-lg font-semibold text-emerald-400 mb-2">
+          Solicitud preparada
+        </h2>
+        <p class="text-slate-300 mb-2">
+          Tu solicitud de eliminación quedó lista en tu cliente de correo.
+          Enviá el mensaje para completar el trámite.
+        </p>
+        <p class="text-slate-200 font-medium">
+          Serás notificado tan pronto la solicitud sea procesada.
+        </p>
+      </div>
+
+      <!-- Cómo funciona -->
+      <section class="mt-10 space-y-6 text-sm">
+        <div>
+          <h2 class="text-lg font-semibold text-white mb-2">¿Cómo funciona?</h2>
+          <ol class="list-decimal ml-5 space-y-1.5 text-slate-400">
+            <li>Completás el formulario y enviás la solicitud.</li>
+            <li>Verificamos tu identidad con los datos indicados.</li>
+            <li>Procesamos la eliminación de la cuenta y sus datos.</li>
+            <li>Te notificamos cuando la solicitud sea procesada.</li>
+          </ol>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white mb-2">¿Qué se elimina?</h2>
+          <p class="text-slate-400">
+            Se elimina la cuenta y los datos asociados: perfil, mediciones
+            corporales, reservas, accesos, membresía y rutinas.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white mb-2">¿Qué se conserva?</h2>
+          <p class="text-slate-400">
+            Solo la información que deba conservarse por obligación legal o para
+            resolver controversias, y las copias de respaldo por un plazo máximo
+            de un año.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white mb-2">Contacto directo</h2>
+          <p class="text-slate-400">
+            Si preferís enviar la solicitud directamente, escribí a
+            <a
+              href="mailto:contact@apirex.cl"
+              class="text-primary-400 underline underline-offset-3 hover:text-primary-300"
+            >
+              contact@apirex.cl
+            </a>
+            . También podés revisar la
+            <a
+              href="/privacidad"
+              class="text-primary-400 underline underline-offset-3 hover:text-primary-300"
+            >
+              política de privacidad
+            </a>
+            .
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-800 py-10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-slate-500 text-sm">
+        © {new Date().getFullYear()} Apirexlab. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+</Layout>
+
+<script>
+  const form = document.getElementById("deletion-form") as HTMLFormElement;
+  const success = document.getElementById("deletion-success");
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const data = new FormData(form);
+    const subject = `Solicitud de eliminación de datos — ${
+      data.get("app") || "Aplicación"
+    }`;
+    const body = [
+      "Hola, quiero solicitar la eliminación de mis datos:",
+      "",
+      `Nombre: ${data.get("name")}`,
+      `Correo: ${data.get("email")}`,
+      `RUT: ${data.get("rut")}`,
+      `Aplicación o servicio: ${data.get("app")}`,
+    ].join("\n");
+
+    window.location.href = `mailto:contact@apirex.cl?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
+
+    form.classList.add("hidden");
+    success?.classList.remove("hidden");
+    success?.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+</script>
