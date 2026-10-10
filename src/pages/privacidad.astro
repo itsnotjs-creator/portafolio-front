@@ -1,0 +1,128 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Content } from "../content/politica-de-privacidad.md";
+
+const title = "Política de privacidad | Apirexlab";
+const description =
+  "Política de privacidad de la aplicación Pull-Up para Android, operada por Apirex.";
+---
+
+<Layout title={title} description={description}>
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur-lg">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <a href="/" class="flex items-center space-x-2 group" aria-label="Volver al inicio de Apirexlab">
+          <img
+            src="https://cdn.jsdelivr.net/gh/itsnotjs-creator/portafolio-images/apirexlab-logo.png"
+            alt="Logo de Apirexlab"
+            width="120"
+            height="80"
+            style="border-radius: 50%;"
+          />
+        </a>
+        <a
+          href="/"
+          class="text-slate-300 hover:text-primary-400 transition-colors duration-300 font-medium"
+        >
+          ← Volver al sitio
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <article class="privacy-content max-w-3xl mx-auto">
+      <Content />
+    </article>
+  </main>
+
+  <footer class="border-t border-slate-800 py-10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-slate-500 text-sm">
+        © {new Date().getFullYear()} Apirexlab. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+</Layout>
+
+<style is:global>
+  .privacy-content {
+    color: #cbd5e1;
+    line-height: 1.75;
+    font-size: 0.95rem;
+  }
+
+  .privacy-content h1 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .privacy-content h2 {
+    color: #fff;
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .privacy-content p {
+    margin-bottom: 1rem;
+  }
+
+  .privacy-content ul,
+  .privacy-content ol {
+    margin: 0 0 1.25rem 1.5rem;
+  }
+
+  .privacy-content ul {
+    list-style: disc;
+  }
+
+  .privacy-content ol {
+    list-style: decimal;
+  }
+
+  .privacy-content li {
+    margin-bottom: 0.4rem;
+  }
+
+  .privacy-content li > ul,
+  .privacy-content li > ol {
+    margin-top: 0.4rem;
+  }
+
+  .privacy-content strong {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .privacy-content a {
+    color: #38bdf8;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .privacy-content a:hover {
+    color: #7dd3fc;
+  }
+
+  .privacy-content blockquote {
+    border-left: 3px solid #38bdf8;
+    background: rgba(56, 189, 248, 0.08);
+    padding: 0.85rem 1.25rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .privacy-content blockquote p {
+    margin-bottom: 0;
+  }
+
+  .privacy-content hr {
+    border-color: #334155;
+    margin: 2.5rem 0;
+  }
+</style>
