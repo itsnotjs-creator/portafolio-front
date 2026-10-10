@@ -6,7 +6,7 @@
 
 ## 1. Quién es responsable
 
-El responsable del tratamiento de los datos personales es **Apirex** (en adelante, “el Responsable”). Sus datos legales son: razón social **[POR DEFINIR: razón social completa]**, RUT **[POR DEFINIR]** y domicilio **[POR DEFINIR]**.
+El responsable del tratamiento de los datos personales es **Apirex** (en adelante, “el Responsable”). Sus datos legales son: razón social **apirex** RUT **apirex** y domicilio **Santiago de chile**.
 
 Para consultas, ejercer derechos o solicitar la eliminación de una cuenta y sus datos, contáctanos en **contact@apirex.cl**. Indica tu nombre, RUT y el gimnasio asociado a tu cuenta para que podamos verificar la solicitud. No envíes tu contraseña.
 
